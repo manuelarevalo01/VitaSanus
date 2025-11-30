@@ -1,0 +1,735 @@
+<!-- VitaSanus Landing Page - "Clínica pero Natural" -->
+<!-- Siguiendo especificaciones del PRD: docs/initial-prd.md -->
+<div class="min-h-screen bg-vs-bg">
+  <!-- Skip to main content (Accessibility) -->
+  <a href="#main" class="skip-to-main">Saltar al contenido principal</a>
+
+  <!-- ============================================
+       NAVBAR - SOLO 3 LINKS (⚠️ REQUISITO CRÍTICO)
+       ============================================ -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-vs-border z-[1030] transition-all duration-300 shadow-soft">
+    <div class="container-vs">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-3 group">
+          <img
+            src="/assets/logo.jpeg"
+            alt="VitaSanus Logo"
+            class="h-12 w-auto transform group-hover:scale-105 transition-transform duration-300 ease-out"
+          />
+        </a>
+
+        <!-- Desktop Navigation - SOLO 3 LINKS -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#hero" class="text-body-sm font-medium text-vs-muted-text hover:text-vs-primary transition-colors">Inicio</a>
+          <a href="/recetas" class="text-body-sm font-medium text-vs-muted-text hover:text-vs-primary transition-colors">Recetas</a>
+          <a href="#sobre-mi" class="text-body-sm font-medium text-vs-muted-text hover:text-vs-primary transition-colors">Sobre Mí</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden p-3 min-w-[44px] min-h-[44px] rounded-lg hover:bg-vs-muted-bg focus:outline-none focus:ring-2 focus:ring-vs-primary focus:ring-offset-2 transition-colors flex items-center justify-center" aria-label="Menú" aria-expanded="false">
+          <svg class="w-6 h-6 text-vs-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main">
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section id="hero" class="min-h-screen flex items-center bg-gradient-to-br from-vs-bg via-white to-accent-50 relative overflow-hidden pt-16">
+      <!-- Decorative background elements -->
+      <div class="absolute top-0 right-0 w-96 h-96 bg-primary-100 rounded-full filter blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2 animate-pulse-soft"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-accent-100 rounded-full filter blur-3xl opacity-20 translate-y-1/2 -translate-x-1/2 animate-pulse-soft" style="animation-delay: 1s;"></div>
+
+      <div class="container-vs relative z-10 py-12 md:py-20 lg:py-28">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-7xl mx-auto">
+
+          <!-- Left Column - Content -->
+          <div class="order-2 lg:order-1 text-center lg:text-left animate-fade-in px-2 sm:px-0">
+            <!-- Trust Badges Container - Expandable on Hover -->
+            <div class="badges-expandable-container mb-4 sm:mb-6">
+              <!-- Main Badge (Always Visible) -->
+              <div class="badge-main inline-flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-accent-50 via-white to-accent-50 border-2 border-vs-primary/30 rounded-full shadow-soft hover:shadow-soft-lg hover:scale-105 transition-all duration-500 animate-fade-in cursor-default relative overflow-hidden">
+                <!-- Animated background shimmer -->
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+
+                <!-- Pulsing icon with ring -->
+                <div class="relative flex items-center justify-center">
+                  <div class="absolute w-5 h-5 bg-vs-primary/30 rounded-full animate-ping"></div>
+                  <div class="relative w-3 h-3 bg-gradient-to-br from-vs-primary to-vs-primary-dark rounded-full shadow-soft"></div>
+                </div>
+
+                <!-- Text with gradient -->
+                <span class="relative z-10 text-sm font-semibold bg-gradient-to-r from-vs-primary to-vs-primary-dark bg-clip-text text-transparent transition-all duration-500">
+                  ✨ Transforma Vidas Cada Día
+                </span>
+              </div>
+
+              <!-- Additional Badges (Hidden, appear on hover) -->
+              <div class="badges-extra inline-flex gap-3 ml-3">
+                <!-- Badge 2 -->
+                <div class="badge-extra inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-teal-50 via-white to-teal-50 border-2 border-teal-400/30 rounded-full shadow-soft cursor-default relative overflow-hidden" style="animation-delay: 0.1s;">
+                  <div class="relative flex items-center justify-center">
+                    <div class="absolute w-4 h-4 rounded-full animate-ping" style="background-color: rgba(87, 151, 150, 0.2);"></div>
+                    <div class="relative w-2.5 h-2.5 rounded-full shadow-soft" style="background: linear-gradient(to bottom right, #579796, #417775);"></div>
+                  </div>
+                  <span class="text-xs font-semibold bg-gradient-to-r from-teal-600 to-teal-700 bg-clip-text text-transparent">
+                    💚 Salud que Inspira
+                  </span>
+                </div>
+
+                <!-- Badge 3 -->
+                <div class="badge-extra inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-emerald-50 via-white to-emerald-50 border-2 border-emerald-400/30 rounded-full shadow-soft cursor-default relative overflow-hidden" style="animation-delay: 0.2s;">
+                  <div class="relative flex items-center justify-center">
+                    <div class="absolute w-4 h-4 bg-emerald-400/20 rounded-full animate-ping"></div>
+                    <div class="relative w-2.5 h-2.5 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full shadow-soft"></div>
+                  </div>
+                  <span class="text-xs font-semibold bg-gradient-to-r from-emerald-600 to-emerald-700 bg-clip-text text-transparent">
+                    🌱 Creciendo Contigo
+                  </span>
+                </div>
+
+                <!-- Badge 4 -->
+                <div class="badge-extra inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-cyan-50 via-white to-cyan-50 border-2 border-cyan-400/30 rounded-full shadow-soft cursor-default relative overflow-hidden" style="animation-delay: 0.3s;">
+                  <div class="relative flex items-center justify-center">
+                    <div class="absolute w-4 h-4 bg-cyan-400/20 rounded-full animate-ping"></div>
+                    <div class="relative w-2.5 h-2.5 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full shadow-soft"></div>
+                  </div>
+                  <span class="text-xs font-semibold bg-gradient-to-r from-cyan-600 to-cyan-700 bg-clip-text text-transparent">
+                    ⭐ Tu Bienestar Primero
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Headline (H1) - Texto exacto del PRD -->
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-4 sm:mb-6 text-vs-text leading-tight text-balance">
+              Alimenta tu vida: hábitos simples para un bienestar real
+            </h1>
+
+            <!-- Hero Subheadline (H2) - Texto exacto del PRD -->
+            <h2 class="text-lg sm:text-xl md:text-2xl font-display font-medium mb-3 sm:mb-4 text-vs-text leading-snug text-balance">
+              Manual Práctico para Mejorar tu Salud a través de Comida Real, Hábitos Conscientes y Bienestar Duradero.
+            </h2>
+
+            <!-- Hero Description - Texto exacto del PRD -->
+            <p class="text-base sm:text-lg text-vs-muted-text mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              Explora cómo optimizar tu bienestar centrándote en la comida genuina y hábitos conscientes que fomenten un modo de vida sostenible.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start">
+              <button class="btn-primary px-8 py-4 text-lg shadow-soft hover:shadow-glow transform hover:-translate-y-1 hover:scale-105 transition-all duration-300">
+                Comienza tu transformación
+              </button>
+              <a href="#sobre-mi" class="btn-secondary px-8 py-4 text-lg hover:scale-105 transition-all duration-300">
+                Conocer el Método
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column - Image -->
+          <div class="order-1 lg:order-2 animate-fade-in px-4 sm:px-0" style="animation-delay: 0.3s;">
+            <div class="relative w-full max-w-md sm:max-w-lg mx-auto">
+              <!-- Hero Image: Persona saludable disfrutando comida real -->
+              <div class="aspect-square rounded-2xl sm:rounded-3xl overflow-hidden shadow-soft-lg animate-float">
+                <img
+                  src="/assets/vitasanus-person.png"
+                  alt="Persona saludable disfrutando de comida real - VitaSanus"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <!-- Decorative elements -->
+              <div class="absolute -top-4 -right-4 w-24 h-24 bg-vs-accent rounded-full opacity-50 blur-xl animate-pulse-soft"></div>
+              <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-vs-primary rounded-full opacity-30 blur-2xl animate-pulse-soft" style="animation-delay: 1s;"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Trust Indicators - Four Interactive 3D Flip Badges -->
+        <div class="flex flex-wrap justify-between gap-4 sm:gap-6 mt-12 w-full mx-auto px-4">
+
+          <!-- Badge 1: Resultados Reales - 3D Flip Card (Teal Primary) -->
+          <div class="badge-flip-container group" style="animation-delay: 0.6s;">
+            <div class="badge-flip-inner">
+              <!-- Front Face -->
+              <div class="badge-flip-front bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-50 border-2 border-teal-400/50 shadow-lg" style="background: linear-gradient(to bottom right, #e6f7f7, #f0fafa, #f5fcfc);">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div class="relative flex items-center justify-center mb-2">
+                  <div class="absolute w-12 h-12 rounded-full animate-ping" style="background-color: rgba(87, 151, 150, 0.2);"></div>
+                  <div class="relative w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg" style="background: linear-gradient(to bottom right, #579796, #417775, #5fa9a8);">
+                    <svg class="w-7 h-7 text-white drop-shadow-md" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <span class="text-xs font-bold uppercase tracking-widest block" style="color: #417775;">💚 Resultados</span>
+                  <span class="text-sm font-black leading-tight" style="color: #2d5554;">Reales</span>
+                </div>
+              </div>
+              <!-- Back Face -->
+              <div class="badge-flip-back border-2 shadow-xl" style="background: linear-gradient(to bottom right, #579796, #417775, #5fa9a8); border-color: #579796;">
+                <div class="flex flex-col items-center justify-center h-full text-white">
+                  <svg class="w-10 h-10 mb-2 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <p class="text-sm font-bold text-center px-2">Cambios que</p>
+                  <p class="text-lg font-black text-center">Perduran</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Badge 2: Comida Real - 3D Flip Card (Sage Green) -->
+          <div class="badge-flip-container group" style="animation-delay: 0.7s;">
+            <div class="badge-flip-inner">
+              <!-- Front Face -->
+              <div class="badge-flip-front border-2 shadow-lg" style="background: linear-gradient(to bottom right, #f0f8f4, #e8f5ed, #f3faf6); border-color: rgba(176, 210, 191, 0.5);">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div class="relative flex items-center justify-center mb-2">
+                  <div class="absolute w-12 h-12 rounded-full animate-ping" style="background-color: rgba(176, 210, 191, 0.2);"></div>
+                  <div class="relative w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg" style="background: linear-gradient(to bottom right, #b0d2bf, #9bc4ad, #a8ceb7);">
+                    <svg class="w-7 h-7 text-white drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <span class="text-xs font-bold uppercase tracking-widest block" style="color: #6b9d83;">🥗 100%</span>
+                  <span class="text-sm font-black leading-tight" style="color: #4a7a62;">Natural</span>
+                </div>
+              </div>
+              <!-- Back Face -->
+              <div class="badge-flip-back border-2 shadow-xl" style="background: linear-gradient(to bottom right, #b0d2bf, #9bc4ad, #a8ceb7); border-color: #b0d2bf;">
+                <div class="flex flex-col items-center justify-center h-full text-white">
+                  <svg class="w-10 h-10 mb-2 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z" clip-rule="evenodd"/>
+                  </svg>
+                  <p class="text-sm font-bold text-center px-2">Comida</p>
+                  <p class="text-lg font-black text-center">Real</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Badge 3: Basado en Ciencia - 3D Flip Card (Deep Teal) -->
+          <div class="badge-flip-container group" style="animation-delay: 0.8s;">
+            <div class="badge-flip-inner">
+              <!-- Front Face -->
+              <div class="badge-flip-front border-2 shadow-lg" style="background: linear-gradient(to bottom right, #e0f2f1, #e8f5f4, #eff9f8); border-color: rgba(69, 130, 128, 0.5);">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div class="relative flex items-center justify-center mb-2">
+                  <div class="absolute w-12 h-12 rounded-full animate-ping" style="background-color: rgba(69, 130, 128, 0.2);"></div>
+                  <div class="relative w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg" style="background: linear-gradient(to bottom right, #458280, #346b69, #569a98);">
+                    <svg class="w-7 h-7 text-white drop-shadow-md" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <span class="text-xs font-bold uppercase tracking-widest block" style="color: #346b69;">📚 Evidencia</span>
+                  <span class="text-sm font-black leading-tight" style="color: #275352;">Científica</span>
+                </div>
+              </div>
+              <!-- Back Face -->
+              <div class="badge-flip-back border-2 shadow-xl" style="background: linear-gradient(to bottom right, #458280, #346b69, #569a98); border-color: #458280;">
+                <div class="flex flex-col items-center justify-center h-full text-white">
+                  <svg class="w-10 h-10 mb-2 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <p class="text-sm font-bold text-center px-2">Basado en</p>
+                  <p class="text-lg font-black text-center">Ciencia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Badge 4: Comunidad Activa - 3D Flip Card (Mint Green) -->
+          <div class="badge-flip-container group" style="animation-delay: 0.9s;">
+            <div class="badge-flip-inner">
+              <!-- Front Face -->
+              <div class="badge-flip-front border-2 shadow-lg" style="background: linear-gradient(to bottom right, #ecfdf5, #f0fdf7, #f5fefa); border-color: rgba(110, 175, 155, 0.5);">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div class="relative flex items-center justify-center mb-2">
+                  <div class="absolute w-12 h-12 rounded-full animate-ping" style="background-color: rgba(110, 175, 155, 0.2);"></div>
+                  <div class="relative w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg" style="background: linear-gradient(to bottom right, #6eaf9b, #5a9886, #7ebfa9);">
+                    <svg class="w-7 h-7 text-white drop-shadow-md" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <span class="text-xs font-bold uppercase tracking-widest block" style="color: #4a7a67;">👥 Apoyo</span>
+                  <span class="text-sm font-black leading-tight" style="color: #366354;">Mutuo</span>
+                </div>
+              </div>
+              <!-- Back Face -->
+              <div class="badge-flip-back border-2 shadow-xl" style="background: linear-gradient(to bottom right, #6eaf9b, #5a9886, #7ebfa9); border-color: #6eaf9b;">
+                <div class="flex flex-col items-center justify-center h-full text-white">
+                  <svg class="w-10 h-10 mb-2 opacity-80" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
+                    <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/>
+                  </svg>
+                  <p class="text-sm font-bold text-center px-2">Comunidad</p>
+                  <p class="text-lg font-black text-center">Activa</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         PILARES/ESENCIALES SECTION
+         ============================================ -->
+    <section id="pilares" class="section-vs bg-vs-muted-bg">
+      <div class="container-vs">
+        <!-- Section Title - Texto exacto del PRD -->
+        <h2 class="section-title max-w-4xl mx-auto">
+          Esenciales para lograr un bienestar integral a través de buenos hábitos.
+        </h2>
+
+        <!-- Pills Grid - 6 Pilares -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
+
+          <!-- Pilar 1: Alimentación -->
+          <div class="group bg-white border-2 border-vs-border rounded-2xl p-6 flex flex-col items-center gap-3 hover:border-vs-primary hover:shadow-soft transition-all cursor-pointer hover:-translate-y-1">
+            <div class="w-16 h-16 rounded-full bg-accent-50 flex items-center justify-center group-hover:bg-accent-100 transition-colors">
+              <svg class="w-8 h-8 text-vs-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <span class="text-body font-medium text-vs-text text-center">Alimentación</span>
+          </div>
+
+          <!-- Pilar 2: Sueño -->
+          <div class="group bg-white border-2 border-vs-border rounded-2xl p-6 flex flex-col items-center gap-3 hover:border-vs-primary hover:shadow-soft transition-all cursor-pointer hover:-translate-y-1">
+            <div class="w-16 h-16 rounded-full bg-accent-50 flex items-center justify-center group-hover:bg-accent-100 transition-colors">
+              <svg class="w-8 h-8 text-vs-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </div>
+            <span class="text-body font-medium text-vs-text text-center">Sueño</span>
+          </div>
+
+          <!-- Pilar 3: Estrés -->
+          <div class="group bg-white border-2 border-vs-border rounded-2xl p-6 flex flex-col items-center gap-3 hover:border-vs-primary hover:shadow-soft transition-all cursor-pointer hover:-translate-y-1">
+            <div class="w-16 h-16 rounded-full bg-accent-50 flex items-center justify-center group-hover:bg-accent-100 transition-colors">
+              <svg class="w-8 h-8 text-vs-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <span class="text-body font-medium text-vs-text text-center">Estrés</span>
+          </div>
+
+          <!-- Pilar 4: Ejercicio -->
+          <div class="group bg-white border-2 border-vs-border rounded-2xl p-6 flex flex-col items-center gap-3 hover:border-vs-primary hover:shadow-soft transition-all cursor-pointer hover:-translate-y-1">
+            <div class="w-16 h-16 rounded-full bg-accent-50 flex items-center justify-center group-hover:bg-accent-100 transition-colors">
+              <svg class="w-8 h-8 text-vs-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <span class="text-body font-medium text-vs-text text-center">Ejercicio</span>
+          </div>
+
+          <!-- Pilar 5: Sol -->
+          <div class="group bg-white border-2 border-vs-border rounded-2xl p-6 flex flex-col items-center gap-3 hover:border-vs-primary hover:shadow-soft transition-all cursor-pointer hover:-translate-y-1">
+            <div class="w-16 h-16 rounded-full bg-accent-50 flex items-center justify-center group-hover:bg-accent-100 transition-colors">
+              <svg class="w-8 h-8 text-vs-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+            </div>
+            <span class="text-body font-medium text-vs-text text-center">Sol</span>
+          </div>
+
+          <!-- Pilar 6: Ayuno y ritmos circadianos -->
+          <div class="group bg-white border-2 border-vs-border rounded-2xl p-6 flex flex-col items-center gap-3 hover:border-vs-primary hover:shadow-soft transition-all cursor-pointer hover:-translate-y-1">
+            <div class="w-16 h-16 rounded-full bg-accent-50 flex items-center justify-center group-hover:bg-accent-100 transition-colors">
+              <svg class="w-8 h-8 text-vs-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <span class="text-body font-medium text-vs-text text-center">Ayuno y ritmos circadianos</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         QUIÉNES SOMOS SECTION
+         ============================================ -->
+    <section id="sobre-mi" class="section-vs bg-white">
+      <div class="container-vs">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+
+          <!-- Left Column - Image -->
+          <div class="order-2 lg:order-1">
+            <div class="relative w-full max-w-lg mx-auto">
+              <!-- VitaSanus Logo -->
+              <div class="aspect-square rounded-3xl bg-gradient-to-br from-vs-bg via-white to-accent-50 flex items-center justify-center overflow-hidden shadow-soft-lg p-12 animate-float">
+                <img
+                  src="/assets/logo.jpeg"
+                  alt="VitaSanus - Salud y Bienestar Integral"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <!-- Decorative elements -->
+              <div class="absolute -top-4 -right-4 w-24 h-24 bg-vs-accent rounded-full opacity-40 blur-xl animate-pulse-soft"></div>
+              <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-vs-primary rounded-full opacity-30 blur-2xl animate-pulse-soft" style="animation-delay: 1s;"></div>
+            </div>
+          </div>
+
+          <!-- Right Column - Content -->
+          <div class="order-1 lg:order-2">
+            <!-- Section Title - Texto exacto del PRD -->
+            <h2 class="text-h2 font-display font-semibold mb-6 text-vs-text">
+              ¿Quién es VitaSanus?
+            </h2>
+
+            <!-- Section Text - Texto exacto del PRD -->
+            <p class="text-body-lg text-vs-muted-text mb-6 leading-relaxed">
+              Una iniciativa dedicada a enseñar un estilo de vida sanador, con enfoque en comida real, educación clara y hábitos que sí se sostienen. Acompañamos procesos, celebramos avances y compartimos herramientas basadas en evidencia.
+            </p>
+
+            <!-- CTA Button - Texto exacto del PRD -->
+            <button class="btn-primary px-6 py-3 shadow-soft hover:shadow-soft-lg transition-all">
+              Tu guía para sanar
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         BENEFICIOS SECTION
+         ============================================ -->
+    <section id="beneficios" class="section-vs bg-vs-muted-bg">
+      <div class="container-vs">
+        <!-- Section Title -->
+        <h2 class="section-title">Transforma Tu Salud</h2>
+        <p class="section-subtitle">Descubre los beneficios tangibles del método VitaSanus</p>
+
+        <!-- 4 Beneficios Grid (2x2) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+          <!-- Beneficio 1: Energía estable todo el día -->
+          <div class="card-vs group">
+            <div class="w-16 h-16 rounded-2xl bg-accent-50 flex items-center justify-center mb-4 group-hover:bg-accent-100 transition-colors">
+              <svg class="w-10 h-10 text-vs-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-h4 font-display font-semibold mb-3 text-vs-text">Energía estable todo el día</h3>
+            <p class="text-body text-vs-muted-text leading-relaxed">
+              Mantén niveles de energía constantes sin los altibajos típicos de dietas desequilibradas.
+            </p>
+          </div>
+
+          <!-- Beneficio 2: Claridad mental -->
+          <div class="card-vs group">
+            <div class="w-16 h-16 rounded-2xl bg-accent-50 flex items-center justify-center mb-4 group-hover:bg-accent-100 transition-colors">
+              <svg class="w-10 h-10 text-vs-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-h4 font-display font-semibold mb-3 text-vs-text">Claridad mental</h3>
+            <p class="text-body text-vs-muted-text leading-relaxed">
+              Mejora tu enfoque y concentración con una nutrición que optimiza la función cerebral.
+            </p>
+          </div>
+
+          <!-- Beneficio 3: Mejor salud metabólica -->
+          <div class="card-vs group">
+            <div class="w-16 h-16 rounded-2xl bg-accent-50 flex items-center justify-center mb-4 group-hover:bg-accent-100 transition-colors">
+              <svg class="w-10 h-10 text-vs-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-h4 font-display font-semibold mb-3 text-vs-text">Mejor salud metabólica</h3>
+            <p class="text-body text-vs-muted-text leading-relaxed">
+              Regula tu metabolismo naturalmente con hábitos respaldados por la ciencia.
+            </p>
+          </div>
+
+          <!-- Beneficio 4: Rendimiento físico -->
+          <div class="card-vs group">
+            <div class="w-16 h-16 rounded-2xl bg-accent-50 flex items-center justify-center mb-4 group-hover:bg-accent-100 transition-colors">
+              <svg class="w-10 h-10 text-vs-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+              </svg>
+            </div>
+            <h3 class="text-h4 font-display font-semibold mb-3 text-vs-text">Rendimiento físico</h3>
+            <p class="text-body text-vs-muted-text leading-relaxed">
+              Alcanza tu mejor versión física con un estilo de vida que potencia tu rendimiento.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIOS SECTION
+         ============================================ -->
+    <section id="testimonios" class="section-vs bg-white">
+      <div class="container-vs">
+        <!-- Section Title - Texto exacto del PRD -->
+        <h2 class="section-title">#HistoriasVitaSanus</h2>
+        <!-- Section Subtitle - Texto exacto del PRD -->
+        <p class="section-subtitle">Gente real con procesos reales que mejoraron su salud y energía.</p>
+
+        <!-- Testimonios Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+          <!-- Testimonio 1 -->
+          <div class="card-vs">
+            <div class="flex items-center gap-4 mb-4">
+              <!-- Avatar placeholder -->
+              <div class="w-14 h-14 rounded-full bg-gradient-to-br from-accent-200 to-primary-200 flex items-center justify-center flex-shrink-0">
+                <span class="text-h4 font-bold text-vs-primary">M</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-vs-text">María</h4>
+                <p class="text-body-sm text-vs-muted-text">42 años</p>
+              </div>
+            </div>
+            <!-- Quote -->
+            <blockquote class="text-body text-vs-text mb-4 leading-relaxed italic">
+              "Bajé 12kg en 3 meses y recuperé mi energía. Por primera vez en años me siento bien conmigo misma."
+            </blockquote>
+            <!-- Badge with metric -->
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-50 rounded-full">
+              <svg class="w-4 h-4 text-vs-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-body-sm font-medium text-vs-primary">-12kg en 3 meses</span>
+            </div>
+          </div>
+
+          <!-- Testimonio 2 -->
+          <div class="card-vs">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-br from-accent-200 to-primary-200 flex items-center justify-center flex-shrink-0">
+                <span class="text-h4 font-bold text-vs-primary">J</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-vs-text">Juan</h4>
+                <p class="text-body-sm text-vs-muted-text">35 años</p>
+              </div>
+            </div>
+            <blockquote class="text-body text-vs-text mb-4 leading-relaxed italic">
+              "Mi digestión mejoró notablemente y ya no sufro de esos bajones de energía después de comer."
+            </blockquote>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-50 rounded-full">
+              <svg class="w-4 h-4 text-vs-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-body-sm font-medium text-vs-primary">Digestión mejorada</span>
+            </div>
+          </div>
+
+          <!-- Testimonio 3 -->
+          <div class="card-vs">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-br from-accent-200 to-primary-200 flex items-center justify-center flex-shrink-0">
+                <span class="text-h4 font-bold text-vs-primary">A</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-vs-text">Ana</h4>
+                <p class="text-body-sm text-vs-muted-text">28 años</p>
+              </div>
+            </div>
+            <blockquote class="text-body text-vs-text mb-4 leading-relaxed italic">
+              "Aprendí a comer de forma equilibrada sin sentir que estoy a dieta. Es un cambio de vida real."
+            </blockquote>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-50 rounded-full">
+              <svg class="w-4 h-4 text-vs-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-body-sm font-medium text-vs-primary">Estilo de vida sostenible</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CTA FINAL SECTION
+         ============================================ -->
+    <section id="cta-final" class="section-vs bg-gradient-to-br from-vs-primary via-primary-600 to-vs-primary-dark text-white relative overflow-hidden animate-gradient">
+      <!-- Decorative background -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full filter blur-3xl animate-pulse-soft"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl animate-pulse-soft" style="animation-delay: 1.5s;"></div>
+      </div>
+
+      <div class="container-vs relative z-10">
+        <div class="max-w-5xl mx-auto text-center">
+          <!-- Unified CTA Text -->
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 leading-tight text-balance">
+            ¡Únete a nuestra comunidad y transforma tu vida hoy mismo!
+          </h2>
+          <p class="text-xl md:text-2xl mb-12 opacity-90 leading-relaxed text-balance max-w-3xl mx-auto">
+            Da el primer paso hacia un futuro más saludable. Comparte tu viaje, recibe tips diarios y comienza el cambio ahora.
+          </p>
+
+          <!-- Social Cards Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-3xl mx-auto px-4">
+
+            <!-- WhatsApp Card -->
+            <a
+              href="https://wa.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group relative bg-white/10 backdrop-blur-lg border-2 border-white/30 rounded-2xl p-6 sm:p-8 md:p-10 overflow-hidden hover:bg-white hover:border-white transition-all duration-500 hover:scale-105 hover:shadow-glow"
+            >
+              <!-- Animated background gradient -->
+              <div class="absolute inset-0 bg-gradient-to-br from-green-400/20 to-green-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <!-- Content -->
+              <div class="relative z-10 flex flex-col items-center text-center">
+                <!-- Enhanced WhatsApp Icon with multiple layers -->
+                <div class="relative w-20 sm:w-24 h-20 sm:h-24 mb-3 sm:mb-5">
+                  <!-- Outer glow ring -->
+                  <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
+                  <!-- Middle animated ring -->
+                  <div class="absolute inset-0 bg-green-400/30 rounded-3xl animate-ping"></div>
+                  <!-- Main icon container -->
+                  <div class="relative w-full h-full bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-3xl flex items-center justify-center shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-2xl">
+                    <!-- WhatsApp logo - more detailed -->
+                    <svg class="w-14 h-14 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    <!-- Small chat notification dot -->
+                    <div class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-pulse shadow-lg">
+                      <span class="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-white">1</span>
+                    </div>
+                  </div>
+                </div>
+                <h4 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2 text-white group-hover:text-vs-primary transition-colors duration-500">
+                  WhatsApp
+                </h4>
+                <p class="text-sm sm:text-base opacity-90 group-hover:text-vs-text transition-colors duration-500">
+                  Contáctanos ahora
+                </p>
+              </div>
+
+              <!-- Decorative corner -->
+              <div class="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </a>
+
+            <!-- Instagram Card -->
+            <a
+              href="https://instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group relative bg-white/10 backdrop-blur-lg border-2 border-white/30 rounded-2xl p-6 sm:p-8 md:p-10 overflow-hidden hover:bg-white hover:border-white transition-all duration-500 hover:scale-105 hover:shadow-glow"
+            >
+              <!-- Animated background gradient -->
+              <div class="absolute inset-0 bg-gradient-to-br from-pink-400/20 via-purple-400/20 to-orange-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <!-- Content -->
+              <div class="relative z-10 flex flex-col items-center text-center">
+                <!-- Enhanced Instagram Icon with multiple layers -->
+                <div class="relative w-20 sm:w-24 h-20 sm:h-24 mb-3 sm:mb-5">
+                  <!-- Outer glow ring -->
+                  <div class="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
+                  <!-- Middle animated ring -->
+                  <div class="absolute inset-0 bg-pink-400/30 rounded-3xl animate-ping"></div>
+                  <!-- Main icon container -->
+                  <div class="relative w-full h-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-3xl flex items-center justify-center shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:-rotate-6 group-hover:shadow-2xl">
+                    <!-- Instagram logo - more detailed -->
+                    <svg class="w-14 h-14 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    <!-- Small notification dot with heart -->
+                    <div class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-pulse shadow-lg">
+                      <span class="absolute inset-0 flex items-center justify-center text-[10px]">❤️</span>
+                    </div>
+                  </div>
+                </div>
+                <h4 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2 text-white group-hover:text-vs-primary transition-colors duration-500">
+                  Instagram
+                </h4>
+                <p class="text-sm sm:text-base opacity-90 group-hover:text-vs-text transition-colors duration-500">
+                  Únete a la comunidad
+                </p>
+              </div>
+
+              <!-- Decorative corner -->
+              <div class="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="bg-vs-text text-white py-12">
+      <div class="container-vs">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+
+          <!-- Column 1: Brand -->
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <img
+                src="/assets/logo.jpeg"
+                alt="VitaSanus Logo"
+                class="h-14 w-auto"
+              />
+            </div>
+            <p class="text-body-sm opacity-80 leading-relaxed">
+              Tu guía para un estilo de vida saludable y sostenible basado en ciencia y naturaleza.
+            </p>
+          </div>
+
+          <!-- Column 2: Links -->
+          <div>
+            <h4 class="font-semibold mb-4">Enlaces</h4>
+            <ul class="space-y-2 text-body-sm">
+              <li><a href="#hero" class="opacity-80 hover:opacity-100 hover:text-vs-accent transition-colors">Inicio</a></li>
+              <li><a href="/recetas" class="opacity-80 hover:opacity-100 hover:text-vs-accent transition-colors">Recetas</a></li>
+              <li><a href="#sobre-mi" class="opacity-80 hover:opacity-100 hover:text-vs-accent transition-colors">Sobre Mí</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Legal -->
+          <div>
+            <h4 class="font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2 text-body-sm">
+              <li><a href="/privacidad" class="opacity-80 hover:opacity-100 hover:text-vs-accent transition-colors">Política de Privacidad</a></li>
+              <li><a href="/terminos" class="opacity-80 hover:opacity-100 hover:text-vs-accent transition-colors">Términos de Servicio</a></li>
+              <li><a href="/contacto" class="opacity-80 hover:opacity-100 hover:text-vs-accent transition-colors">Contacto</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="pt-8 border-t border-white/10 text-center">
+          <p class="text-body-sm opacity-60">
+            © {{getCurrentYear()}} VitaSanus. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</div>

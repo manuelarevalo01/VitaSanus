@@ -1,0 +1,741 @@
+/* ============================================
+   VitaSanus - Global Styles
+   Design System: "Clínica pero Natural"
+   ============================================ */
+
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* ============================================
+   CSS Custom Properties (Variables)
+   ============================================ */
+
+:root {
+  /* Brand Colors - VitaSanus Palette */
+  --vs-bg: #fdfaf5;           /* Crema cálido - fondo principal */
+  --vs-muted-bg: #f3f5f2;     /* Verde muy claro - secciones alternas */
+  --vs-text: #1f2937;         /* Gris oscuro - texto principal */
+  --vs-muted-text: #475569;   /* Gris medio - texto secundario */
+  --vs-primary: #579796;      /* Verde azulado marca - CTAs, links */
+  --vs-primary-dark: #417775; /* Hover states */
+  --vs-accent: #b0d2bf;       /* Verde claro - highlights, badges */
+  --vs-border: #e5e7eb;       /* Bordes sutiles */
+
+  /* Semantic Colors */
+  --vs-success: #22c55e;
+  --vs-warning: #f59e0b;
+  --vs-error: #ef4444;
+  --vs-info: #3b82f6;
+
+  /* Typography Scale */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'DM Sans', 'Inter', system-ui, sans-serif;
+
+  /* Font Sizes */
+  --text-hero: 3.5rem;      /* 56px */
+  --text-h1: 2.5rem;        /* 40px */
+  --text-h2: 2rem;          /* 32px */
+  --text-h3: 1.75rem;       /* 28px */
+  --text-h4: 1.5rem;        /* 24px */
+  --text-body-lg: 1.125rem; /* 18px */
+  --text-body: 1rem;        /* 16px */
+  --text-body-sm: 0.875rem; /* 14px */
+  --text-caption: 0.75rem;  /* 12px */
+
+  /* Spacing Scale */
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-sm: 1rem;     /* 16px */
+  --spacing-md: 1.5rem;   /* 24px */
+  --spacing-lg: 2rem;     /* 32px */
+  --spacing-xl: 3rem;     /* 48px */
+  --spacing-2xl: 4rem;    /* 64px */
+  --spacing-3xl: 5rem;    /* 80px */
+  --spacing-4xl: 6rem;    /* 96px */
+
+  /* Border Radius */
+  --radius-sm: 0.375rem;  /* 6px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-xl: 1rem;      /* 16px */
+  --radius-2xl: 1.5rem;   /* 24px */
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-soft: 0 2px 15px -3px rgba(87, 151, 150, 0.1), 0 4px 6px -2px rgba(87, 151, 150, 0.05);
+  --shadow-soft-lg: 0 10px 30px -5px rgba(87, 151, 150, 0.15), 0 8px 10px -5px rgba(87, 151, 150, 0.08);
+  --shadow-glow: 0 0 20px rgba(87, 151, 150, 0.3);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-Index Scale */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+/* ============================================
+   Base Styles & Resets
+   ============================================ */
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.6;
+    color: var(--vs-text);
+    background-color: var(--vs-bg);
+    overflow-x: hidden;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  /* Typography Base */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--vs-text);
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: var(--text-h1);
+  }
+
+  h2 {
+    font-size: var(--text-h2);
+  }
+
+  h3 {
+    font-size: var(--text-h3);
+    font-weight: 500;
+  }
+
+  h4 {
+    font-size: var(--text-h4);
+    font-weight: 500;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--vs-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--vs-primary-dark);
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  /* Form Elements */
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+
+/* ============================================
+   Custom Utility Classes
+   ============================================ */
+
+@layer utilities {
+  /* Hide scrollbar but keep functionality */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  /* Smooth scroll behavior */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Text balance for better typography */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gradient text effects */
+  .gradient-text-primary {
+    background: linear-gradient(135deg, var(--vs-primary) 0%, var(--vs-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-warm {
+    background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Focus visible for accessibility */
+  .focus-visible-ring {
+    &:focus-visible {
+      outline: 2px solid var(--vs-primary);
+      outline-offset: 2px;
+      border-radius: var(--radius-sm);
+    }
+  }
+}
+
+/* ============================================
+   Component Patterns
+   ============================================ */
+
+@layer components {
+  /* Container */
+  .container-vs {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @media (min-width: 640px) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Section Padding */
+  .section-vs {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    @media (min-width: 768px) {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    @media (min-width: 1024px) {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+  /* Card Styles */
+  .card-vs {
+    background: white;
+    border: 1px solid var(--vs-border);
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-soft);
+    transition: all var(--transition-base);
+
+    &:hover {
+      box-shadow: var(--shadow-soft-lg);
+      transform: translateY(-2px);
+    }
+  }
+
+  /* Button Primary */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    font-size: var(--text-body);
+    line-height: 1.5;
+    color: white;
+    background-color: var(--vs-primary);
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    transition: all var(--transition-base);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--vs-primary-dark);
+      box-shadow: var(--shadow-soft-lg);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  /* Button Secondary */
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    font-size: var(--text-body);
+    line-height: 1.5;
+    color: var(--vs-primary);
+    background-color: transparent;
+    border: 2px solid var(--vs-primary);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--vs-accent);
+      border-color: var(--vs-accent);
+    }
+  }
+
+  /* Badge */
+  .badge-vs {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    font-size: var(--text-body-sm);
+    font-weight: 500;
+    border-radius: var(--radius-full);
+    background-color: var(--vs-accent);
+    color: var(--vs-text);
+  }
+
+  /* Input Field */
+  .input-vs {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: var(--text-body);
+    line-height: 1.5;
+    color: var(--vs-text);
+    background-color: white;
+    border: 2px solid var(--vs-border);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+
+    &:focus {
+      outline: none;
+      border-color: var(--vs-primary);
+      box-shadow: 0 0 0 3px rgba(87, 151, 150, 0.1);
+    }
+
+    &::placeholder {
+      color: var(--vs-muted-text);
+    }
+  }
+
+  /* Textarea */
+  .textarea-vs {
+    @extend .input-vs;
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  /* Section Title */
+  .section-title {
+    font-family: var(--font-display);
+    font-size: var(--text-h2);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--vs-text);
+  }
+
+  /* Section Subtitle */
+  .section-subtitle {
+    font-size: var(--text-body-lg);
+    text-align: center;
+    color: var(--vs-muted-text);
+    max-width: 42rem;
+    margin: 0 auto var(--spacing-2xl);
+    line-height: 1.6;
+  }
+}
+
+/* ============================================
+   Expandable Badges Hover Effect
+   ============================================ */
+
+.badges-expandable-container {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+
+  @media (min-width: 1024px) {
+    width: auto;
+    justify-content: flex-start;
+  }
+}
+
+.badge-main {
+  width: 280px;
+  justify-content: center;
+
+  @media (max-width: 640px) {
+    width: 100%;
+    max-width: 280px;
+    min-width: 240px;
+  }
+}
+
+.badges-extra {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-width 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.4s ease-in-out 0.1s;
+
+  @media (max-width: 640px) {
+    display: none;
+  }
+}
+
+.badge-extra {
+  width: 280px;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+
+  @media (max-width: 640px) {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+.badges-expandable-container:hover .badges-extra {
+  max-width: 900px;
+  opacity: 1;
+}
+
+.badges-expandable-container:hover .badge-extra {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.badges-expandable-container:hover .badge-extra:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.badges-expandable-container:hover .badge-extra:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.badges-expandable-container:hover .badge-extra:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/* ============================================
+   3D Flip Badge Styles
+   ============================================ */
+
+.badge-flip-container {
+  perspective: 1000px;
+  width: 140px;
+  height: 140px;
+  cursor: pointer;
+  animation: fadeIn 0.8s ease-out forwards;
+
+  @media (max-width: 768px) {
+    width: calc(50% - 12px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    min-width: 120px;
+    max-width: 140px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    max-width: 160px;
+    margin: 0 auto;
+  }
+}
+
+.badge-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.badge-flip-container:hover .badge-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.badge-flip-front,
+.badge-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow: hidden;
+
+  @media (max-width: 480px) {
+    padding: 0.75rem;
+  }
+}
+
+.badge-flip-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.badge-flip-back {
+  transform: rotateY(180deg);
+}
+
+/* ============================================
+   VitaSanus Specific Animations
+   ============================================ */
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Pulse Soft Animation for CTAs */
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+
+/* Scale In Animation for Cards */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+/* Float Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.7s ease-out;
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.7s ease-out;
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* ============================================
+   Responsive Typography
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --text-hero: 2.5rem;   /* 40px on mobile */
+    --text-h1: 2rem;       /* 32px on mobile */
+    --text-h2: 1.75rem;    /* 28px on mobile */
+    --text-h3: 1.5rem;     /* 24px on mobile */
+  }
+}
+
+/* ============================================
+   Accessibility
+   ============================================ */
+
+/* Skip to main content link */
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--vs-primary);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: var(--z-tooltip);
+
+  &:focus {
+    top: 0;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--vs-primary);
+  outline-offset: 2px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
